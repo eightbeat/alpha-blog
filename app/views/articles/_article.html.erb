@@ -5,6 +5,9 @@
         <div class="article-title">
           <%= link_to article.title, article_path(article) %>
         </div>
+        <% if article.categories.any? %>
+          <p>Categories: <%= render article.categories %></p>
+        <% end %>
         <div class="article-body">
           <%= translate(article.description, length: 1000) %>
           <div class="article-meta-details">
